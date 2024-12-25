@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: stock_monitor_mysql
+    environment:
+      MYSQL_DATABASE: stock_monitor          # Name of the database
+      MYSQL_USER: stock_user                 # Database username
+      MYSQL_PASSWORD: 12345__               # Database user password
+      MYSQL_ROOT_PASSWORD: Stock_Monitor1++ # Root password
+    ports:
+      - "3306:3306"                          # Map MySQL port
+    volumes:
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d
