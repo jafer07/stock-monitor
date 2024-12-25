@@ -67,8 +67,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.sql</groupId>
-      <artifactId>micronaut-data-jpa</artifactId>
+      <groupId>io.micronaut.data</groupId>
+      <artifactId>micronaut-data-hibernate-jpa</artifactId>
     </dependency>
     <dependency>
       <groupId>io.micronaut.sql</groupId>
@@ -79,8 +79,9 @@
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.websocket</groupId>
+      <groupId>io.micronaut</groupId>
       <artifactId>micronaut-websocket</artifactId>
+      <version>4.7.10</version>
     </dependency>
     <dependency>
       <groupId>io.micronaut.rabbitmq</groupId>
@@ -104,32 +105,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
         <configuration>
-          <!-- Uncomment to enable incremental compilation -->
-          <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
-
-          <annotationProcessorPaths combine.children="append">
-            <path>
-              <groupId>io.micronaut</groupId>
-              <artifactId>micronaut-http-validation</artifactId>
-              <version>${micronaut.core.version}</version>
-            </path>
-            <path>
-              <groupId>io.micronaut.serde</groupId>
-              <artifactId>micronaut-serde-processor</artifactId>
-              <version>${micronaut.serialization.version}</version>
-              <exclusions>
-                <exclusion>
-                  <groupId>io.micronaut</groupId>
-                  <artifactId>micronaut-inject</artifactId>
-                </exclusion>
-              </exclusions>
-            </path>
-          </annotationProcessorPaths>
-          <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.example</arg>
-            <arg>-Amicronaut.processing.module=stockmonitor</arg>
-          </compilerArgs>
+          <source>21</source>
+          <target>21</target>
+          <release>21</release>
         </configuration>
       </plugin>
     </plugins>

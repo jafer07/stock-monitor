@@ -1,0 +1,20 @@
+# Datasource configuration for MySQL
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/stock_monitor
+    username: stock_user
+    password: 12345__
+    driverClassName: com.mysql.cj.jdbc.Driver
+    dialect: MYSQL
+    schema-generate: CREATE  # Automatically create tables on startup
+    schema-generate-dialect: MYSQL
+    # Optional HikariCP settings for connection pooling
+    maximumPoolSize: 10
+    minimumIdle: 2
+    idleTimeout: 30000
+
+# JPA settings
+jpa:
+  default:
+    packages-to-scan:
+      - com.example.stockmonitor.model
