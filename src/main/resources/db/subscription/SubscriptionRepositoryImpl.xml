@@ -1,0 +1,22 @@
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm orm_2_1.xsd"
+                 version="2.1">
+
+    <named-query name="Subscription.findByUserId">
+        <query>
+            <![CDATA[
+                SELECT s FROM Subscription s WHERE s.userId = :userId
+            ]]>
+        </query>
+    </named-query>
+
+    <named-query name="Subscription.findByStockTicker">
+        <query>
+            <![CDATA[
+                SELECT s FROM Subscription s WHERE s.stockTicker = :stockTicker
+            ]]>
+        </query>
+    </named-query>
+
+</entity-mappings>
